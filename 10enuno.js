@@ -1,15 +1,15 @@
 function mostrarMenu() {
     return prompt(
-        "Seleccione una opción:\n" +
+        "Seleccione una opcion:\n" +
         "1. Calculadora simple\n" +
-        "2. Verificador de palíndromo\n" +
-        "3. Generador de números aleatorios\n" +
+        "2. Verificador de palindromo\n" +
+        "3. Generador de numeros aleatorios\n" +
         "4. Convertidor de temperatura\n" +
         "5. Contador de vocales\n" +
-        "6. Factorial de un número\n" +
+        "6. Factorial de un numero\n" +
         "7. Suma de elementos de un array\n" +
-        "8. Inversión de cadena\n" +
-        "9. Buscador de números primos\n" +
+        "8. Inversion de cadena\n" +
+        "9. Buscador de numeros primos\n" +
         "10. Ordenamiento de array\n" +
         "0. Salir"
     );
@@ -20,8 +20,8 @@ function calcular(num1, num2, operador) {
         case '+': return num1 + num2;
         case '-': return num1 - num2;
         case '*': return num1 * num2;
-        case '/': return num2 !== 0 ? num1 / num2 : 'Error: División por cero';
-        default: return 'Operador no válido';
+        case '/': return num2 !== 0 ? num1 / num2 : 'Error: Division por cero';
+        default: return 'Operador no valido';
     }
 }
 
@@ -75,41 +75,40 @@ function ordenarArray(arr, orden = 'asc') {
     return orden === 'asc' ? arr.sort((a, b) => a - b) : arr.sort((a, b) => b - a);
 }
 
-// Inicia el menú
 let opcion;
 do {
     opcion = mostrarMenu();
     switch (opcion) {
         case '1':
-            let num1 = parseFloat(prompt("Ingrese el primer número:"));
-            let num2 = parseFloat(prompt("Ingrese el segundo número:"));
+            let num1 = parseFloat(prompt("Ingrese el primer numero:"));
+            let num2 = parseFloat(prompt("Ingrese el segundo numero:"));
             let operador = prompt("Ingrese el operador (+, -, *, /):");
             alert("Resultado: " + calcular(num1, num2, operador));
             break;
         case '2':
             let texto = prompt("Ingrese una palabra o frase:");
-            alert("Es palíndromo: " + esPalindromo(texto));
+            alert("Es palindromo: " + esPalindromo(texto));
             break;
         case '3':
-            let min = parseInt(prompt("Ingrese el mínimo:"));
-            let max = parseInt(prompt("Ingrese el máximo:"));
-            alert("Número aleatorio: " + numeroAleatorio(min, max));
+            let min = parseInt(prompt("Ingrese el minimo:"));
+            let max = parseInt(prompt("Ingrese el maximo:"));
+            alert("Numero aleatorio: " + numeroAleatorio(min, max));
             break;
         case '4':
             let grados = parseFloat(prompt("Ingrese los grados:"));
             let tipo = prompt("Convertir a (C/F):");
-            alert("Conversión: " + convertirTemperatura(grados, tipo));
+            alert("Conversion: " + convertirTemperatura(grados, tipo));
             break;
         case '5':
             let cadena = prompt("Ingrese un texto:");
-            alert("Número de vocales: " + contarVocales(cadena));
+            alert("Numero de vocales: " + contarVocales(cadena));
             break;
         case '6':
-            let n = parseInt(prompt("Ingrese un número:"));
+            let n = parseInt(prompt("Ingrese un numero:"));
             alert("Factorial: " + factorial(n));
             break;
         case '7':
-            let array = prompt("Ingrese números separados por coma:").split(',').map(Number);
+            let array = prompt("Ingrese numeros separados por coma:").split(',').map(Number);
             alert("Suma del array: " + sumaArray(array));
             break;
         case '8':
@@ -117,12 +116,12 @@ do {
             alert("Texto invertido: " + invertirCadena(textoInvertir));
             break;
         case '9':
-            let inicio = parseInt(prompt("Ingrese el número de inicio:"));
-            let fin = parseInt(prompt("Ingrese el número de fin:"));
-            alert("Números primos: " + primosEnRango(inicio, fin));
+            let inicio = parseInt(prompt("Ingrese el numero de inicio:"));
+            let fin = parseInt(prompt("Ingrese el numero de fin:"));
+            alert("Numeros primos: " + primosEnRango(inicio, fin));
             break;
         case '10':
-            let arrOrdenar = prompt("Ingrese números separados por coma:").split(',').map(Number);
+            let arrOrdenar = prompt("Ingrese numeros separados por coma:").split(',').map(Number);
             let orden = prompt("Orden (asc/desc):");
             alert("Array ordenado: " + ordenarArray(arrOrdenar, orden));
             break;
@@ -130,6 +129,6 @@ do {
             alert("Saliendo del programa...");
             break;
         default:
-            alert("Opción no válida. Intente nuevamente.");
+            alert("Opcion no valida. Intente nuevamente.");
     }
 } while (opcion !== '0');
